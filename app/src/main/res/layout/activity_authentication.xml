@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AuthenticationActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/movie_people"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@string/auth_activity_access_more_text"
+            android:textSize="24sp"
+            android:textColor="@color/blue_006A"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_marginVertical="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@string/auth_activity_login_to_an_account_text"
+            android:textColor="@color/light_grey_a5"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRedirectLogin"
+        android:text="@string/auth_activity_login_text"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:background="@drawable/bg_button_blue_radius"
+        app:backgroundTint="@null"
+        android:layout_above="@+id/btnRedirectSignup"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRedirectSignup"
+        android:text="@string/auth_activity_signup_text"
+        android:textColor="@color/blue_006A"
+        android:fontFamily="@font/poppins_bold"
+        android:background="@drawable/bg_button_blue_stroke_transparent_radius"
+        app:backgroundTint="@null"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

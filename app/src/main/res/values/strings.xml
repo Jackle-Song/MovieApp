@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">MovieApp</string>
+
+    <!--Authentication Activity-->
+    <string name="auth_activity_access_more_text">Access with more an account</string>
+    <string name="auth_activity_login_to_an_account_text">Login to an account so you could access more features</string>
+    <string name="auth_activity_login_text">Login</string>
+    <string name="auth_activity_signup_text">Sign Up</string>
+    <string name="auth_activity_do_not_have_account_text">Don\'t have an account?</string>
+    <string name="auth_activity_already_have_account_text">Already have an account?</string>
+
+    <!--Authentication Options Activity - login-->
+    <string name="auth_activity_login_welcome_back_text">Welcome Back</string>
+    <string name="auth_activity_login_login_welcome_text">I am happy to see you again. You can login for more features.</string>
+    <string name="auth_activity_login_kindly_register_text">Kindly register to continue for more features.</string>
+    <string name="auth_activity_login_email_username_text">Email/Username</string>
+    <string name="auth_activity_login_password_text">Password</string>
+
+    <!--Authentication Options Activity - sign up-->
+    <string name="auth_activity_sign_up_email_text">Email</string>
+    <string name="auth_activity_sign_up_username_text">Username</string>
+    <string name="auth_activity_sign_up_password_text">Password</string>
 </resources>
