@@ -1,5 +1,6 @@
 package com.mrsworkshop.movieapp.activity
 
+import android.content.Intent
 import android.os.Bundle
 import com.mrsworkshop.movieapp.R
 import com.mrsworkshop.movieapp.adapter.AuthenticationAdapter
@@ -51,6 +52,11 @@ class AuthenticationOptionsActivity : BaseActivity() {
     private fun setupComponentListener() {
         binding.imgBackIcon.setOnClickListener {
             finish()
+        }
+
+        binding.btnAuthenticationLogin.setOnClickListener {
+            val intent = Intent(this@AuthenticationOptionsActivity, MovieListActivity::class.java)
+            startActivity(intent)
         }
 
         binding.txtLoginSignUp.setOnClickListener {

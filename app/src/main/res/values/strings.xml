@@ -20,4 +20,7 @@
     <string name="auth_activity_sign_up_email_text">Email</string>
     <string name="auth_activity_sign_up_username_text">Username</string>
     <string name="auth_activity_sign_up_password_text">Password</string>
+
+    <!--Movie List Activity-->
+    <string name="movie_list_activity_search_movie_text">Search Movie</string>
 </resources>

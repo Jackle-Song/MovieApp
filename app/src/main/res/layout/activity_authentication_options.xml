@@ -57,7 +57,7 @@
                 android:id="@+id/txtAccountExistedQuestion"
                 android:text="@string/auth_activity_do_not_have_account_text"
                 android:textSize="12sp"
-                android:textColor="@color/light_grey_a5"
+                android:textColor="@color/black_32"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>

@@ -39,6 +39,19 @@ android {
 }
 
 dependencies {
+    //glide
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+
+    //retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.retrofit2:adapter-rxjava2:2.6.2")
+
+    //okhttp3
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.10.0")
+
+    //gson
+    implementation ("com.google.code.gson:gson:2.9.1")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
