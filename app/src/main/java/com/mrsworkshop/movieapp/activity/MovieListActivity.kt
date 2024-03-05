@@ -4,10 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.gson.Gson
 import com.mrsworkshop.movieapp.adapter.MovieListAdapter
 import com.mrsworkshop.movieapp.apidata.response.MovieListDetails
 import com.mrsworkshop.movieapp.databinding.ActivityMovieListBinding
+import com.mrsworkshop.movieapp.mySQLite.MovieListDatabaseHandler
 import com.mrsworkshop.movieapp.viewModel.MovieListApiData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -53,6 +56,12 @@ class MovieListActivity : BaseActivity(), MovieListAdapter.MovieListInterface {
     }
 
     private fun setupComponentListener() {
+        onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finishAffinity()
+            }
+        })
+
         binding.etEditTextSearchMovie.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 // Not needed
@@ -73,25 +82,36 @@ class MovieListActivity : BaseActivity(), MovieListAdapter.MovieListInterface {
      */
 
     private fun retrieveMovieList() {
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val response = movieListApiData.getMovieList()?.execute()
-                withContext(Dispatchers.Main) {
-                    if (response?.isSuccessful == true) {
-                        val movieResponse = response.body()
-                        if (movieResponse != null) {
-                            movieDetailsList = movieResponse.Search ?: mutableListOf()
-                            movieListAdapter.updateMovieList(movieDetailsList)
+        val databaseHandler = MovieListDatabaseHandler(this@MovieListActivity)
+        val existingMovieList = databaseHandler.retrieveLocalMovieListItem()
+
+        if (existingMovieList.isNotEmpty()) {
+            println("existingMovieList ${Gson().toJson(existingMovieList)}")
+            movieDetailsList = existingMovieList
+        }
+        else {
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    val response = movieListApiData.getMovieList()?.execute()
+                    withContext(Dispatchers.Main) {
+                        if (response?.isSuccessful == true) {
+                            val movieResponse = response.body()
+                            if (movieResponse != null) {
+                                movieDetailsList = movieResponse.Search ?: mutableListOf()
+                            }
+                        }
+                        else {
+                            // Handle unsuccessful response
                         }
                     }
-                    else {
-                        // Handle unsuccessful response
-                    }
+                }
+                catch (e: Exception) {
+                    // Handle network errors
                 }
             }
-            catch (e: Exception) {
-                // Handle network errors
-            }
         }
+
+        movieListAdapter.updateMovieList(movieDetailsList)
     }
+
 }

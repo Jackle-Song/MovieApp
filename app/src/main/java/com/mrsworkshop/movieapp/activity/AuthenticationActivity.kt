@@ -3,6 +3,7 @@ package com.mrsworkshop.movieapp.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.google.firebase.auth.FirebaseAuth
 import com.mrsworkshop.movieapp.core.CoreEnum
 import com.mrsworkshop.movieapp.databinding.ActivityAuthenticationBinding
 import com.mrsworkshop.movieapp.utils.Constants
