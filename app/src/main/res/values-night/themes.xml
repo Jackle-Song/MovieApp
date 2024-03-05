@@ -6,4 +6,8 @@
         <item name="android:statusBarColor">@color/white</item> <!-- Set status bar color to white -->
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
     </style>
+
+    <style name="ContentLoadingProgress" parent="Base.Theme.MovieApp">
+        <item name="colorAccent">@color/light_grey_a5</item>
+    </style>
 </resources>

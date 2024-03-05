@@ -24,38 +24,23 @@
         android:layout_height="wrap_content"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilOutlinedUsernameTextField"
+        android:id="@+id/tilOutlinedSignUpEmailTextField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:hint="@string/auth_activity_sign_up_username_text"
-        app:hintTextColor="@color/light_grey_a5"
-        android:textColorHint="@color/light_grey_a5"
-        app:boxStrokeColor="@color/blue_006A"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etEditTextUsername"
-            android:fontFamily="@font/poppins_medium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilOutlinedTextField"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:hint="@string/auth_activity_sign_up_email_text"
         app:hintTextColor="@color/light_grey_a5"
         android:textColorHint="@color/light_grey_a5"
         app:boxStrokeColor="@color/blue_006A"
+        app:errorEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEditTextEmail"
             android:fontFamily="@font/poppins_medium"
+            android:maxLines="1"
+            android:lines="1"
+            android:textColor="@color/black_32"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -65,16 +50,24 @@
         android:id="@+id/tilOutlinedPasswordTextField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:hint="@string/auth_activity_sign_up_password_text"
         app:hintTextColor="@color/light_grey_a5"
         android:textColorHint="@color/light_grey_a5"
         app:boxStrokeColor="@color/blue_006A"
+        app:errorEnabled="true"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/blue_006A"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEditTextPassword"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:textColor="@color/black_32"
             android:fontFamily="@font/poppins_medium"
+            android:maxLines="1"
+            android:lines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

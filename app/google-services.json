@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "631376138717",
+    "project_id": "movie-app-4e7af",
+    "storage_bucket": "movie-app-4e7af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631376138717:android:5ef2997379725d48a02634",
+        "android_client_info": {
+          "package_name": "com.mrsworkshop.movieapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO2YWLRoK5rXsVyRm-DUmVBkNoBgnWrQ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

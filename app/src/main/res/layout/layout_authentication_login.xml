@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilOutlinedTextField"
+        android:id="@+id/tilOutlinedLoginEmailTextField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -32,11 +32,14 @@
         app:hintTextColor="@color/light_grey_a5"
         android:textColorHint="@color/light_grey_a5"
         app:boxStrokeColor="@color/blue_006A"
+        app:errorEnabled="true"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEditTextEmailUsername"
             android:textColor="@color/black_32"
+            android:maxLines="1"
+            android:lines="1"
             android:fontFamily="@font/poppins_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -52,12 +55,17 @@
         app:hintTextColor="@color/light_grey_a5"
         android:textColorHint="@color/light_grey_a5"
         app:boxStrokeColor="@color/blue_006A"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/blue_006A"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEditTextPassword"
+            android:inputType="textPassword"
             android:textColor="@color/black_32"
             android:fontFamily="@font/poppins_medium"
+            android:maxLines="1"
+            android:lines="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

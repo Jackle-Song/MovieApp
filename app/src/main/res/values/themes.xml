@@ -8,4 +8,8 @@
     </style>
 
     <style name="Theme.MovieApp" parent="Base.Theme.MovieApp" />
+
+    <style name="ContentLoadingProgress" parent="Base.Theme.MovieApp">
+        <item name="colorAccent">@color/light_grey_a5</item>
+    </style>
 </resources>
