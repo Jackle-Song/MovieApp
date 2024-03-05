@@ -43,6 +43,7 @@ class MovieDetailsActivity : BaseActivity() {
 
         imdbID = intent.getStringExtra(MovieListActivity.MOVIE_DETAIL_ID)
         retrieveMovieDetail(imdbID ?: "")
+        setupComponentListener()
     }
 
     /**
@@ -87,6 +88,12 @@ class MovieDetailsActivity : BaseActivity() {
             txtOtherRatingsValue.text = movieDetailRatingItem?.Value
 
             binding.layoutOtherRatings.addView(otherRatingsItemView)
+        }
+    }
+
+    private fun setupComponentListener() {
+        binding.imgCloseBtn.setOnClickListener {
+            finish()
         }
     }
 

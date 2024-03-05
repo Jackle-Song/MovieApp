@@ -24,6 +24,18 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"/>
 
+        <ImageView
+            android:id="@+id/imgCloseBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_white_round"
+            android:padding="8dp"
+            android:src="@drawable/ic_close_btn"
+            app:tint="@color/blue_006A" />
+
         <com.google.android.material.card.MaterialCardView
             app:strokeColor="@color/transparent"
             app:cardElevation="5dp"
@@ -36,6 +48,7 @@
 
             <ImageView
                 android:id="@+id/imgCardMovieImage"
+                android:scaleType="centerCrop"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 
