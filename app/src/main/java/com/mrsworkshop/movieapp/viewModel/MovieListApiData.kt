@@ -2,6 +2,7 @@ package com.mrsworkshop.movieapp.viewModel
 
 import android.content.Context
 import com.google.gson.GsonBuilder
+import com.mrsworkshop.movieapp.apidata.response.MovieDetailDTO
 import com.mrsworkshop.movieapp.apidata.response.MovieListDTO
 import com.mrsworkshop.movieapp.network.ApiClient
 import com.mrsworkshop.movieapp.network.ApiInterface
@@ -19,5 +20,9 @@ class MovieListApiData {
 
     fun getMovieList(): Call<MovieListDTO>? {
         return apiInterface?.getMovieList(Constants.MOVIE_SELECTION, Constants.MOVIE_TYPE, Constants.API_KEY)
+    }
+
+    fun getMovieDetail(id : String): Call<MovieDetailDTO>? {
+        return apiInterface?.getMovieDetail(id, Constants.API_KEY)
     }
 }

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <ImageView
+            android:id="@+id/imgBlurMovieImage"
+            android:scaleType="centerCrop"
+            android:background="@color/black_32"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <View
+            android:background="@drawable/shape_triangle_white"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            app:strokeColor="@color/transparent"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="16dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="120dp"
+            android:layout_height="180dp">
+
+            <ImageView
+                android:id="@+id/imgCardMovieImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginStart="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtMovieRunTime"
+                android:textSize="14sp"
+                android:textColor="@color/light_grey_a5"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RatingBar
+                    android:id="@+id/ratingBarMovieDetail"
+                    android:stepSize="0.1"
+                    android:progressTint="@color/blue_006A"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtRatingsOverTen"
+                    android:textSize="16sp"
+                    android:textColor="@color/blue_006A"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtTotalRatings"
+                    android:textSize="14sp"
+                    android:textColor="@color/light_grey_a5"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtMovieTitleWithYear"
+                android:textSize="24sp"
+                android:textColor="@color/black_32"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtMovieType"
+                android:textSize="14sp"
+                android:textColor="@color/light_grey_a5"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="@string/movie_detail_activity_plot_summary_text"
+                android:textSize="20sp"
+                android:textColor="@color/black_32"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtPlotSummaryContent"
+                android:textSize="14sp"
+                android:textColor="@color/light_grey_a5"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="@string/movie_detail_activity_other_rating_text"
+                android:textSize="20sp"
+                android:textColor="@color/black_32"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <HorizontalScrollView
+                android:layout_marginBottom="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/layoutOtherRatings"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

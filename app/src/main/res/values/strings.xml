@@ -23,4 +23,10 @@
 
     <!--Movie List Activity-->
     <string name="movie_list_activity_search_movie_text">Search Movie</string>
+
+    <!--Movie Detail Activity-->
+    <string name="movie_detail_activity_movie_title_with_year_text">%s(%s)</string>
+    <string name="movie_detail_activity_total_ratings_text">%s ratings</string>
+    <string name="movie_detail_activity_plot_summary_text">Plot Summary</string>
+    <string name="movie_detail_activity_other_rating_text">Other Ratings</string>
 </resources>

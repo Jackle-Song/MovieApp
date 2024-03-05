@@ -1,5 +1,6 @@
 package com.mrsworkshop.movieapp.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -13,7 +14,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MovieListActivity : BaseActivity() {
+class MovieListActivity : BaseActivity(), MovieListAdapter.MovieListInterface {
+
+    companion object {
+        const val MOVIE_DETAIL_ID = "movieDetailID"
+    }
+
     private lateinit var binding: ActivityMovieListBinding
     private lateinit var movieListAdapter: MovieListAdapter
 
@@ -30,12 +36,18 @@ class MovieListActivity : BaseActivity() {
         setupComponentListener()
     }
 
+    override fun viewMovieDetails(imdbID: String?) {
+        val intent = Intent(this@MovieListActivity, MovieDetailsActivity::class.java)
+        intent.putExtra(MOVIE_DETAIL_ID, imdbID)
+        startActivity(intent)
+    }
+
     /**
      * private function
      */
 
     private fun initUI() {
-        movieListAdapter = MovieListAdapter(this@MovieListActivity, movieDetailsList, movieDetailsList)
+        movieListAdapter = MovieListAdapter(this@MovieListActivity, movieDetailsList, movieDetailsList, this@MovieListActivity)
         binding.recyclerviewMovieList.layoutManager = GridLayoutManager(this@MovieListActivity, 2)
         binding.recyclerviewMovieList.adapter = movieListAdapter
     }
@@ -55,6 +67,10 @@ class MovieListActivity : BaseActivity() {
             }
         })
     }
+
+    /**
+     * api call
+     */
 
     private fun retrieveMovieList() {
         CoroutineScope(Dispatchers.IO).launch {

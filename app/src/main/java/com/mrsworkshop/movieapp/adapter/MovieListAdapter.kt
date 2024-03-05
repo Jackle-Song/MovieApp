@@ -17,11 +17,17 @@ class MovieListAdapter(
     private var mContext : Context,
     private var movieDetailsList : MutableList<MovieListDetails>?,
     private var filteredMovieDetailsList : MutableList<MovieListDetails>?,
+    private var mListener : MovieListInterface,
     ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     init {
         filteredMovieDetailsList = movieDetailsList
     }
+
+    interface MovieListInterface {
+        fun viewMovieDetails(imdbID : String?)
+    }
+
     class MovieDetailsViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         val imgMovieImage : ImageView = itemView.findViewById(R.id.imgMovieImage)
         val txtMovieTitle : TextView = itemView.findViewById(R.id.txtMovieTitle)
@@ -45,6 +51,10 @@ class MovieListAdapter(
             .into(movieDetailsViewHolder.imgMovieImage)
 
         movieDetailsViewHolder.txtMovieTitle.text = movieDetailItem?.Title
+
+        movieDetailsViewHolder.imgMovieImage.setOnClickListener {
+            mListener.viewMovieDetails(movieDetailItem?.imdbID)
+        }
     }
 
     fun updateMovieList(updatedMovieList : MutableList<MovieListDetails>?) {
@@ -55,7 +65,6 @@ class MovieListAdapter(
 
     fun filter(query: String) {
         filteredMovieDetailsList?.clear()
-        println("movieDetailsList ${Gson().toJson(movieDetailsList)}")
 
         if (query.isEmpty()) {
             filteredMovieDetailsList?.addAll(movieDetailsList ?: mutableListOf())

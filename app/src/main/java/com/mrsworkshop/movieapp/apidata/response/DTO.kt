@@ -5,7 +5,6 @@ abstract class DTO (
     var responseMessage: String? = null,
 
     var errorKey: String? = null,
-    var title: String? = null,
     var statusCode: Int? = null,
     var httpDetails: String? = null
 )

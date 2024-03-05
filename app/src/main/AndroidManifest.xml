@@ -22,6 +22,9 @@
         <activity android:name=".activity.MovieListActivity"
             android:screenOrientation="portrait"
             android:exported="true"/>
+        <activity android:name=".activity.MovieDetailsActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
         <activity
             android:name=".activity.AuthenticationActivity"
             android:screenOrientation="portrait"
